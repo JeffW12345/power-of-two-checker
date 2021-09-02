@@ -1,7 +1,7 @@
 /*
- * The printPOWERIfPowerOfTwoAndIntIfNot method prints, for integers from 0 to 'maxNum' inclusive:
+ * The printPOWERIfPowerOfTwoAndIntIfNot(int maxNum) method prints, for integers from 0 to 'maxNum' inclusive:
  * 
- * - The integer itself if it is not a number to the power of two, i.e. if the number in question is 'x' then there is no integer 'y' such that such that 2^y equals x.
+ * - The integer itself if it is NOT a number to the power of two, i.e. if the number in question is 'x' then there is no integer 'y' such that such that 2^y equals x.
  * - 'POWER' if the integer is a power of two. 
  */
 
@@ -20,10 +20,7 @@ public class PowerOfTwo {
 	public static Boolean isPowerOfTwo(int num) {
 		// if 2^x = num, Math.log(num) / Math.log(2) returns the value of x
 		// as per https://stackoverflow.com/questions/3305059/how-do-you-calculate-log-base-2-in-java-for-integers
-		double exponent = Math.log(num) / Math.log(2);
-		double exponentAsInt = (int) (Math.log(num) / Math.log(2));
-		// Math.pow(2, exponentAsInt) == i used instead of exponent == exponentAsInt below due
-		// to the possibility of floating point errors.
+		double exponentAsInt = (int) (Math.log(num) / Math.log(2)); // Zeros everything after the decimal point.
 		if (Math.pow(2, exponentAsInt) == num && num > 0) {
 			return true;
 		}
