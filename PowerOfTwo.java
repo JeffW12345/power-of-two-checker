@@ -17,7 +17,7 @@ public class PowerOfTwo {
 		}
 	}
 
-	private static Boolean isPowerOfTwo(int num) {
+	private static boolean isPowerOfTwo(int num) {
 		// if 2^x = num, Math.log(num) / Math.log(2) returns the value of x
 		// as per https://stackoverflow.com/questions/3305059/how-do-you-calculate-log-base-2-in-java-for-integers
 		double exponentAsInt = (int) (Math.log(num) / Math.log(2)); // Zeros everything after the decimal point.
